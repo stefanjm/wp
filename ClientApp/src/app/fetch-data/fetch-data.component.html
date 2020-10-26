@@ -1,0 +1,40 @@
+<h1 id="tableLabel">Cups</h1>
+
+<p *ngIf="!cups"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cups">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Diameter</th>
+      <th>Height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cup of cups">
+      <td>{{ cup.id}}</td>
+      <td>{{ cup.diameter }}</td>
+      <td>{{ cup.height }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h1>Sorted Cups</h1>
+<button (click)="sortCups()" class="btn btn-outline-primary">Sort Cups</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="sortedCups">
+  <thead>
+    <tr>
+      <th>Sorted Cup</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sortedCup of sortedCups">
+      <td>
+        <div *ngFor="let cup of sortedCup">
+          <p data-toggle="tooltip" data-placement="top" title="Diameter: {{ cup.diameter }}; Height: {{ cup.height }}">{{ cup.id }}</p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
