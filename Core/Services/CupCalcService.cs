@@ -23,7 +23,34 @@ namespace WoodPeckerAngular.Core.Services
 
             // Sort them / algorithm
             var sortedCupsList = new List<SortedCupsModel>();
+
+            // algorithm
+
+            foreach (var cup in cups)
+            {
+
+            }
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cup1">Cup to fit into</param>
+        /// <param name="cup2">Cup to fit</param>
+        /// <returns></returns>
+        private bool DoesCupFitCup(CupModel cup1, CupModel cup2)
+        {
+            if (cup1.Diameter > cup2.Diameter && cup1.Height > cup2.Height)
+            {
+                return true;
+            }
+            else if(cup1.Diameter > cup2.Height && cup1.Height > cup2.Diameter)
+            {
+                return true;
+            }
+            else
+                return false;
+        } 
     }
 }
