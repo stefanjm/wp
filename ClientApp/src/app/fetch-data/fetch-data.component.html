@@ -29,11 +29,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let sortedCup of sortedCups">
+    <tr *ngFor="let sortedcup of sortedCups">
       <td>
-        <div *ngFor="let cup of sortedCup">
-          <p data-toggle="tooltip" data-placement="top" title="Diameter: {{ cup.diameter }}; Height: {{ cup.height }}">{{ cup.id }}</p>
-        </div>
+
+          <span *ngFor="let cup of sortedcup.sortedCups" data-toggle="tooltip" data-placement="top" title="Diameter: {{ cup.diameter }}; Height: {{ cup.height }}">{{ cup.id }},</span>
+ 
       </td>
     </tr>
   </tbody>
