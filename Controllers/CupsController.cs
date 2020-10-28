@@ -30,6 +30,7 @@ namespace WoodPeckerAngular.Controllers
         public async Task<ActionResult<IEnumerable<CupModel>>> GetCupModel()
         {
             var cups = await _cupRepository.GetAll();
+            cups = cups.OrderBy(o => o.Id);
             return cups.ToList();
         }
 
