@@ -8,6 +8,6 @@ namespace WoodPeckerAngular.Core.Models
     public class SortedCupsModel
     {
         public int Id { get; set; }
-        public IList<CupModel> SortedCups { get; set; }
+        public IList<CupModel> SortedCups { get; set; } = new List<CupModel>();
     }
 }
