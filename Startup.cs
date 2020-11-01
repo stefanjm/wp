@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using WoodPeckerAngular.Data;
 using WoodPeckerAngular.Core.Services;
 using WoodPeckerAngular.Core.Interfaces;
+using WoodPeckerAngular.Core.Algorithms;
 
 namespace WoodPeckerAngular
 {
@@ -36,6 +37,7 @@ namespace WoodPeckerAngular
 
             services.AddScoped<ICupCalcService, CupCalcService>();
             services.AddScoped<ICupRepository, CupRepository>();
+            services.AddScoped<CupSortingAlgorithm>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
